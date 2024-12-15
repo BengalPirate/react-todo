@@ -1,12 +1,6 @@
-import TodoListItem from './TodoListItem'; // Import TodoListItem
+import TodoListItem from './TodoListItem';
 
-const todoList = [
-    { id: 1, title: "Complete assignment" },
-    { id: 2, title: "Read a new book" },
-    { id: 3, title: "Exercise for 30 minutes" }
-];
-
-function TodoList() {
+function TodoList({ todoList }) {
     return (
         <div>
             <h1>Todo List</h1>
