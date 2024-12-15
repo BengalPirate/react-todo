@@ -1,22 +1,21 @@
-import './App.css'
-
-const todoList = [
-  { id: 1, title: "Complete assignment" },
-  { id: 2, title: "Read a new book" },
-  { id: 3, title: "Exercise for 30 minutes" }
-];
+import { useState } from 'react';
+import './App.css';
+import TodoList from './TodoList';
+import AddTodoForm from './AddTodoForm';
 
 function App() {
-  return (
-    <>
-      <h1>Todo List</h1>
-      <ul>
-        {todoList.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
-    </>
-  )
+    // Create newTodo state with setNewTodo as the update function
+    const [newTodo, setNewTodo] = useState('');
+
+    return (
+        <>
+            <h1>Todo List</h1>
+            <TodoList />
+            <AddTodoForm onAddTodo={setNewTodo} />
+            {/* Display the value of newTodo */}
+            <p>New Todo: {newTodo}</p>
+        </>
+    );
 }
 
 export default App;
